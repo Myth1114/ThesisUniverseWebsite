@@ -1,0 +1,92 @@
+:root {
+  /* =========================
+       COLORS
+    ========================= */
+
+  --color-bg: #ffffff;
+  --color-bg-soft: #f6f8fb;
+  --color-bg-muted: #edf3f8;
+
+  --color-primary: #0b4a75;
+  --color-primary-dark: #073454;
+  --color-primary-light: #1d6798;
+
+  --color-text: #15354d;
+  --color-text-muted: #718697;
+  --color-text-light: #ffffff;
+
+  /* bright yellow for decorative accents */
+  --color-accent: #f5c400;
+
+  /* darker gold for text on white */
+  --color-accent-dark: #b88900;
+
+  --color-accent-soft: #fff4c2;
+
+  --color-border: #dbe5ec;
+  --color-border-strong: #c4d2dc;
+
+  /* =========================
+       TYPOGRAPHY
+    ========================= */
+
+  --font-primary: "Inter", sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* =========================
+       CONTAINERS
+    ========================= */
+
+  --container: 1180px;
+  --container-wide: 1380px;
+  --container-padding: 1.5rem;
+
+  /* =========================
+       SPACING
+    ========================= */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 5rem;
+  --space-10: 7rem;
+
+  --section-space: 7rem;
+  --section-space-mobile: 4.5rem;
+
+  /* =========================
+       BORDER RADIUS
+    ========================= */
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+  --radius-round: 999px;
+
+  /* =========================
+       TRANSITIONS
+    ========================= */
+
+  --transition-fast: 180ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* =========================
+       SHADOWS
+    ========================= */
+
+  --shadow-soft: 0 16px 40px rgba(10, 61, 102, 0.08);
+
+  --shadow-medium: 0 24px 60px rgba(10, 61, 102, 0.12);
+}

@@ -1,0 +1,246 @@
+.final-cta {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+
+  overflow: hidden;
+}
+
+.final-cta__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.75fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 8rem);
+
+  min-height: 520px;
+}
+
+.final-cta__content {
+  max-width: 760px;
+}
+
+.final-cta__eyebrow {
+  color: var(--color-text-light) !important;
+}
+
+.final-cta__eyebrow::before {
+  background: var(--color-accent);
+}
+
+.final-cta__title {
+  margin-top: var(--space-4);
+
+  color: var(--color-text-light) !important;
+}
+
+.final-cta__description {
+  margin-top: var(--space-5);
+
+  color: rgba(255, 255, 255, 0.74) !important;
+}
+
+.final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+
+  margin-top: var(--space-6);
+}
+
+.final-cta__actions .btn--primary {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+
+/* .final-cta__actions .btn--primary:hover {
+  background: var(--color-accent-hover);
+} */
+
+.final-cta__actions .btn--secondary {
+  border-color: rgba(255, 255, 255, 0.35);
+
+  color: var(--color-text-light);
+}
+
+.final-cta__actions .btn--secondary:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================
+     VISUAL
+  ========================================= */
+
+.final-cta__visual {
+  position: relative;
+
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+}
+
+.final-cta__orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  translate: -50% -50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.final-cta__orbit--one {
+  width: 42%;
+  aspect-ratio: 1;
+}
+
+.final-cta__orbit--two {
+  width: 66%;
+  aspect-ratio: 1;
+}
+
+.final-cta__orbit--three {
+  width: 90%;
+  aspect-ratio: 1;
+}
+
+/* =========================================
+     CENTER LOGO
+  ========================================= */
+
+.final-cta__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+
+  width: 72px;
+  height: 72px;
+
+  translate: -50% -50%;
+
+  padding: 0.75rem;
+
+  border-radius: 50%;
+
+  background: var(--color-bg);
+
+  box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.04),
+    0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+.final-cta__logo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* =========================================
+     PLANETS
+  ========================================= */
+
+.final-cta__planet {
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+
+  background: var(--color-text-light);
+
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* INNER ORBIT */
+
+.final-cta__planet--1 {
+  top: 32%;
+  left: 43%;
+}
+
+.final-cta__planet--2 {
+  top: 47%;
+  right: 28%;
+}
+
+.final-cta__planet--3 {
+  bottom: 30%;
+  left: 39%;
+
+  background: var(--color-accent);
+}
+
+/* MIDDLE ORBIT */
+
+.final-cta__planet--4 {
+  top: 21%;
+  left: 50%;
+}
+
+.final-cta__planet--5 {
+  top: 50%;
+  right: 17%;
+
+  background: var(--color-accent);
+}
+
+.final-cta__planet--6 {
+  bottom: 17%;
+  left: 32%;
+}
+
+/* OUTER ORBIT */
+
+.final-cta__planet--7 {
+  top: 8%;
+  left: 37%;
+}
+
+.final-cta__planet--8 {
+  top: 39%;
+  right: 4%;
+}
+
+.final-cta__planet--9 {
+  bottom: 5%;
+  left: 48%;
+
+  background: var(--color-accent);
+}
+
+/* =========================================
+     RESPONSIVE
+  ========================================= */
+
+@media (max-width: 900px) {
+  .final-cta__inner {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .final-cta__visual {
+    width: min(100%, 340px);
+  }
+}
+
+@media (max-width: 480px) {
+  .final-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .final-cta__actions .btn {
+    width: 100%;
+  }
+
+  .final-cta__visual {
+    width: min(90%, 280px);
+  }
+}

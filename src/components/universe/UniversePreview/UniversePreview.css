@@ -1,0 +1,332 @@
+.universe-preview {
+  position: relative;
+  overflow: visible;
+  width: min(100%, 560px);
+  aspect-ratio: 1;
+
+  margin-inline: auto;
+
+  isolation: isolate;
+}
+
+/* =========================================
+     GLOW
+  ========================================= */
+
+.universe-preview__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 64%;
+  aspect-ratio: 1;
+
+  translate: -50% -50%;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(245, 196, 0, 0.13) 0%,
+    rgba(11, 74, 117, 0.07) 42%,
+    transparent 72%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================
+     ORBITS
+  ========================================= */
+
+.universe-preview__orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /*
+     * IMPORTANT:
+     * We use the independent translate property,
+     * NOT transform: translate().
+     *
+     * GSAP can now rotate this element without
+     * destroying its centering.
+     */
+  translate: -50% -50%;
+
+  transform-origin: 50% 50%;
+
+  pointer-events: none;
+}
+
+.universe-preview__orbit--one {
+  width: 44%;
+  aspect-ratio: 1;
+}
+
+.universe-preview__orbit--two {
+  width: 58%;
+  aspect-ratio: 1;
+}
+
+.universe-preview__orbit--three {
+  width: 72%;
+  aspect-ratio: 1;
+}
+
+.universe-preview__orbit--four {
+  width: 86%;
+  aspect-ratio: 1;
+}
+
+.universe-preview__orbit--five {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.universe-preview__orbit-ring {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgba(11, 74, 117, 0.17);
+  border-radius: 50%;
+}
+
+/* =========================================
+     PLANET
+  ========================================= */
+
+/*
+   * Every planet sits at the TOP of its orbit.
+   *
+   * When its parent orbit rotates, the entire
+   * planet + label travels around that ring.
+   */
+
+.universe-preview__planet {
+  position: absolute;
+
+  /*
+     * Put the CENTER of the whole label unit
+     * directly on the orbit circumference.
+     */
+  top: 0;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  translate: -50% -50%;
+
+  white-space: nowrap;
+
+  z-index: 3;
+}
+.universe-preview__planet-dot {
+  width: 12px;
+  height: 12px;
+
+  flex: 0 0 12px;
+
+  border: 2px solid var(--color-bg);
+  border-radius: 50%;
+
+  background: var(--color-primary);
+
+  box-shadow: 0 0 0 1px rgba(11, 74, 117, 0.16),
+    0 4px 12px rgba(11, 74, 117, 0.18);
+}
+
+.universe-preview__planet-dot--accent {
+  background: var(--color-accent);
+}
+
+.universe-preview__planet-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 28px;
+  padding: 0.35rem 0.6rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-round);
+
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--color-primary-dark);
+
+  box-shadow: var(--shadow-soft);
+
+  font-size: 0.66rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* =========================================
+     FIXED CENTER
+  ========================================= */
+
+.universe-preview__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 28%;
+  aspect-ratio: 1;
+
+  /*
+     * The CENTER never receives GSAP rotation.
+     */
+  translate: -50% -50%;
+
+  z-index: 5;
+}
+
+.universe-preview__core-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: var(--space-4);
+
+  border: 1px solid rgba(11, 74, 117, 0.1);
+  border-radius: 50%;
+
+  background: var(--color-bg);
+
+  box-shadow: 0 20px 60px rgba(11, 74, 117, 0.12),
+    0 0 0 12px rgba(11, 74, 117, 0.035);
+
+  text-align: center;
+}
+
+.universe-preview__core-mark {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: var(--space-2);
+
+  border-radius: 50%;
+
+  background: var(--color-primary);
+  color: var(--color-text-light);
+
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.universe-preview__core-title {
+  color: var(--color-primary-dark);
+
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+}
+
+.universe-preview__core-text {
+  margin-top: 0.25rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.62rem;
+  line-height: 1.35;
+}
+
+/* =========================================
+     TABLET
+  ========================================= */
+
+@media (max-width: 768px) {
+  .universe-preview {
+    width: min(100%, 430px);
+  }
+
+  .universe-preview__core {
+    width: 33%;
+  }
+
+  .universe-preview__planet-label {
+    min-height: 24px;
+
+    padding: 0.28rem 0.48rem;
+
+    font-size: 0.56rem;
+  }
+
+  .universe-preview__planet-dot {
+    width: 11px;
+    height: 11px;
+
+    flex-basis: 11px;
+  }
+}
+
+/* =========================================
+     MOBILE
+  ========================================= */
+
+@media (max-width: 480px) {
+  .universe-preview {
+    width: min(100%, 340px);
+  }
+  .universe-preview__planet {
+    gap: 0.25rem;
+  }
+  .universe-preview__planet-anchor {
+    gap: 0.25rem;
+    translate: -5px -50%;
+  }
+
+  .universe-preview__planet-dot {
+    width: 9px;
+    height: 9px;
+
+    flex-basis: 9px;
+
+    border-width: 2px;
+  }
+
+  .universe-preview__planet-label {
+    min-height: 20px;
+
+    padding: 0.22rem 0.36rem;
+
+    font-size: 0.47rem;
+  }
+
+  .universe-preview__core {
+    width: 33%;
+  }
+
+  .universe-preview__core-inner {
+    padding: var(--space-3);
+  }
+
+  .universe-preview__core-mark {
+    width: 36px;
+    height: 36px;
+
+    margin-bottom: 0.35rem;
+
+    font-size: 0.68rem;
+  }
+
+  .universe-preview__core-title {
+    font-size: 0.76rem;
+  }
+
+  .universe-preview__core-text {
+    display: none;
+  }
+}

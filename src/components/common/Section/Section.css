@@ -1,0 +1,34 @@
+.section {
+  padding-block: var(--section-space);
+}
+
+.section--small {
+  padding-block: var(--space-8);
+}
+
+.section--large {
+  padding-block: 9rem;
+}
+
+.section--soft {
+  background: var(--color-bg-soft);
+}
+
+.section--muted {
+  background: var(--color-bg-muted);
+}
+
+.section--primary {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--section-space-mobile);
+  }
+
+  .section--large {
+    padding-block: 6rem;
+  }
+}
