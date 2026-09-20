@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/layout/Footer/Footer";
 
 import Header from "./components/layout/Header/Header";
+import Services from "./pages/Services/Services";
 import FinalCTA from "./sections/FinalCTA/FinalCTA";
 import Hero from "./sections/Hero/Hero";
 import HowItWorks from "./sections/HowItWorks/HowItWorks";
@@ -47,10 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        <Route
-          path="/services"
-          element={<PlaceholderPage title="Services" />}
-        />
+        <Route path="/services" element={<Services />} />
 
         <Route
           path="/how-it-works"
@@ -61,9 +59,7 @@ function App() {
           path="/resources"
           element={<PlaceholderPage title="Resources" />}
         />
-
         <Route path="/about" element={<PlaceholderPage title="About" />} />
-
         <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
       </Routes>
       <Footer />
