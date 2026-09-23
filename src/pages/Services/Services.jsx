@@ -1,7 +1,9 @@
 import AcademicWork from "./AcademicWork";
 import ResearchJourney from "./ResearchJourney";
-import "./Services.css";
+import FinalCTA from "../../sections/FinalCTA/FinalCTA";
 import ServicesHero from "./ServicesHero";
+
+import "./Services.css";
 
 function Services() {
   return (
@@ -9,6 +11,7 @@ function Services() {
       <ServicesHero />
       <AcademicWork />
       <ResearchJourney />
+      <FinalCTA />
     </main>
   );
 }

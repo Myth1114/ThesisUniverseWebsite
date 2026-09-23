@@ -2,6 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/layout/Footer/Footer";
 
 import Header from "./components/layout/Header/Header";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import ResourceDetail from "./pages/Resources/ResourceDetail";
+import Resources from "./pages/Resources/Resources";
 import Services from "./pages/Services/Services";
 import FinalCTA from "./sections/FinalCTA/FinalCTA";
 import Hero from "./sections/Hero/Hero";
@@ -49,18 +53,11 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/services" element={<Services />} />
-
-        <Route
-          path="/how-it-works"
-          element={<PlaceholderPage title="How It Works" />}
-        />
-
-        <Route
-          path="/resources"
-          element={<PlaceholderPage title="Resources" />}
-        />
-        <Route path="/about" element={<PlaceholderPage title="About" />} />
-        <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
+        <Route path="/how-it-works" element={<HowItWorks />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/resources/:guideId" element={<ResourceDetail />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>
