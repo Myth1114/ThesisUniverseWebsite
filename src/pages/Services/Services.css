@@ -1,6 +1,12 @@
 .services-hero {
   padding: 7rem 0 5rem;
   background-color: var(--color-bg);
+  background: radial-gradient(
+      circle at 78% 42%,
+      rgba(245, 194, 66, 0.11),
+      transparent 28%
+    ),
+    var(--color-bg);
 }
 
 .services-hero__layout {

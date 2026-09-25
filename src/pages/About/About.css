@@ -7,7 +7,12 @@
 
 .about-hero {
   padding: 8rem 0 6rem;
-  background-color: var(--color-bg);
+  background: radial-gradient(
+      circle at 78% 42%,
+      rgba(245, 194, 66, 0.11),
+      transparent 28%
+    ),
+    var(--color-bg);
 }
 
 .about-hero__content {
