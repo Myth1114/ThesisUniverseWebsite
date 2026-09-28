@@ -7,7 +7,7 @@ import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import Button from "../../components/common/Button/Button";
 
 import "./Contact.css";
-import SEO from "../../components/common/SEO/seo";
+import SEO from "../../components/common/SEO/SEO";
 
 const supportAreas = [
   "Assignment",

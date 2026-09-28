@@ -5,7 +5,7 @@ import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import Button from "../../components/common/Button/Button";
 import FinalCTA from "../../sections/FinalCTA/FinalCTA";
 import Section from "../../components/common/Section/Section";
-import SEO from "../../components/common/SEO/seo";
+import SEO from "../../components/common/SEO/SEO";
 
 function About() {
   return (

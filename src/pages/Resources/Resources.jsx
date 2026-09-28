@@ -5,7 +5,7 @@ import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import Button from "../../components/common/Button/Button";
 import { resourceGuides } from "../../data/resourceGuides";
 import "./Resources.css";
-import SEO from "../../components/common/SEO/seo";
+import SEO from "../../components/common/SEO/SEO";
 
 const faqs = [
   {

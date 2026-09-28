@@ -4,7 +4,7 @@ import Container from "../../components/common/Container/Container";
 import Button from "../../components/common/Button/Button";
 import { resourceGuides } from "../../data/resourceGuides";
 import "./ResourceDetail.css";
-import SEO from "../../components/common/SEO/seo";
+import SEO from "../../components/common/SEO/SEO";
 
 function ResourceDetail() {
   const { guideId } = useParams();

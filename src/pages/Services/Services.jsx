@@ -4,7 +4,7 @@ import FinalCTA from "../../sections/FinalCTA/FinalCTA";
 import ServicesHero from "./ServicesHero";
 
 import "./Services.css";
-import SEO from "../../components/common/SEO/seo";
+import SEO from "../../components/common/SEO/SEO";
 
 function Services() {
   return (
