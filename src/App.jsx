@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SEO from "./components/common/SEO/seo";
 import Footer from "./components/layout/Footer/Footer";
 
 import Header from "./components/layout/Header/Header";
@@ -16,21 +17,17 @@ import WhyThesisUniverse from "./sections/WhyThesisUniverse/WhyThesisUniverse";
 
 const Home = () => (
   <main>
+    <SEO
+      title="Academic Research & Dissertation Guidance"
+      description="Professional thesis consultation, proposal defense coaching, and research methodology support for graduate and postgraduate scholars."
+      keywords="Thesis Services, Thesis in Nepal, Thesis Consulting, Dissertation Defense, Research Proposal, Academic Research Support"
+    />
     <Hero />
     <ResearchConstellation />
     <HowItWorks />
     <WhyThesisUniverse />
     <ResearchLab />
     <FinalCTA />
-    <div className="container">
-      <div style={{ paddingBlock: "6rem" }}>
-        <p className="eyebrow">Thesis Universe</p>
-
-        <h1 className="page-title" style={{ marginTop: "1rem" }}>
-          Homepage
-        </h1>
-      </div>
-    </div>
   </main>
 );
 

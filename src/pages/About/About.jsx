@@ -5,10 +5,16 @@ import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import Button from "../../components/common/Button/Button";
 import FinalCTA from "../../sections/FinalCTA/FinalCTA";
 import Section from "../../components/common/Section/Section";
+import SEO from "../../components/common/SEO/seo";
 
 function About() {
   return (
     <main className="about-page">
+      <SEO
+        title="About Us"
+        description="Learn about Thesis Universe, our academic research mentors, and our commitment to helping scholars achieve academic excellence."
+        keywords="About Thesis Universe, Academic Mentors, Research Consultants, Graduate Advisors"
+      />
       {/* About Hero */}
       <Section className="about-hero">
         <Container>

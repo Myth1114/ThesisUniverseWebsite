@@ -4,6 +4,7 @@ import Container from "../../components/common/Container/Container";
 import Button from "../../components/common/Button/Button";
 import { resourceGuides } from "../../data/resourceGuides";
 import "./ResourceDetail.css";
+import SEO from "../../components/common/SEO/seo";
 
 function ResourceDetail() {
   const { guideId } = useParams();
@@ -11,6 +12,9 @@ function ResourceDetail() {
   const guideIndex = resourceGuides.findIndex((item) => item.id === guideId);
 
   const guide = resourceGuides[guideIndex];
+  const formattedTitle = guideId
+    ? guideId.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+    : "Resource Guide";
 
   if (!guide) {
     return (
@@ -44,6 +48,10 @@ function ResourceDetail() {
 
   return (
     <main className="resource-detail">
+      <SEO
+        title={formattedTitle}
+        description={`Read our in-depth research guide on ${formattedTitle}. Complete framework and templates provided by Thesis Universe.`}
+      />
       <Section className="resource-detail__hero" spacing="compact">
         <Container>
           <div className="resource-detail__hero-grid">

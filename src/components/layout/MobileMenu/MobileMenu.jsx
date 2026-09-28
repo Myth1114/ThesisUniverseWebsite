@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import Button from "../../common/Button/Button";
+import Logo from "../../common/Logo/Logo";
 
 import "./MobileMenu.css";
 
@@ -25,7 +26,7 @@ const MobileMenu = ({ isOpen, onClose, navigation }) => {
         aria-label="Mobile navigation"
       >
         <div className="mobile-menu__header">
-          <span className="mobile-menu__title">Thesis Universe</span>
+          <Logo className="mobile-menu__brand" />
 
           <button
             className="mobile-menu__close"

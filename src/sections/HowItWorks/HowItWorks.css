@@ -114,8 +114,7 @@
   ========================================= */
 
 .how-it-works__step {
-  transition: transform var(--transition-base),
-    background-color var(--transition-base);
+  transition: transform var(--transition-base);
 }
 
 .how-it-works__step:hover {

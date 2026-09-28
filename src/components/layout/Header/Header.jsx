@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Button from "../../common/Button/Button";
 import Container from "../../common/Container/Container";
@@ -8,6 +8,7 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 import { navigation } from "../../../data/navigation.js";
 
 import "./Header.css";
+import Logo from "../../common/Logo/Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,15 +30,7 @@ const Header = () => {
       <header className="site-header">
         <Container wide>
           <div className="site-header__inner">
-            <Link
-              to="/"
-              className="site-header__brand"
-              aria-label="Thesis Universe home"
-            >
-              <span className="site-header__brand-mark">TU</span>
-
-              <span className="site-header__brand-text">Thesis Universe</span>
-            </Link>
+            <Logo className="site-header__brand" />
 
             <nav className="site-header__nav" aria-label="Primary navigation">
               {navigation.map((item) => (

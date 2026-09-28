@@ -7,6 +7,7 @@ import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import Button from "../../components/common/Button/Button";
 
 import "./Contact.css";
+import SEO from "../../components/common/SEO/seo";
 
 const supportAreas = [
   "Assignment",
@@ -74,6 +75,11 @@ function Contact() {
 
   return (
     <main className="contact-page">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Thesis Universe academic advisors to discuss your research project, dissertation, or defense preparation."
+        keywords="Contact Academic Consultant, Schedule Consultation, Thesis Inquiries"
+      />
       {/* Hero */}
       <Section className="contact-hero" spacing="compact">
         <Container>

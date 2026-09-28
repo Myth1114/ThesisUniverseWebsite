@@ -5,6 +5,7 @@ import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import Button from "../../components/common/Button/Button";
 import { resourceGuides } from "../../data/resourceGuides";
 import "./Resources.css";
+import SEO from "../../components/common/SEO/seo";
 
 const faqs = [
   {
@@ -45,6 +46,11 @@ function Resources() {
 
   return (
     <main className="resources-page">
+      <SEO
+        title="Research Resources & Guides"
+        description="Free academic research templates, thesis writing guidelines, citation manuals (APA, Harvard, IEEE), and dissertation toolkits."
+        keywords="Thesis Templates, Research Guidelines, Citation Styles, Academic Writing Resources"
+      />
       <Section className="resources-hero" spacing="compact">
         <Container>
           <div className="resources-hero__grid">
