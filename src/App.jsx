@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SEO from "./components/common/SEO/seo";
+import SEO from "./components/common/SEO/SEO";
 import Footer from "./components/layout/Footer/Footer";
 
 import Header from "./components/layout/Header/Header";
