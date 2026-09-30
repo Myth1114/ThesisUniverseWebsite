@@ -1,26 +1,29 @@
+import { forwardRef } from "react";
+
 import "./Section.css";
 
-const Section = ({
-  children,
-  className = "",
-  size = "default",
-  background = "default",
-  id,
-}) => {
-  const classes = [
-    "section",
-    size !== "default" ? `section--${size}` : "",
-    background !== "default" ? `section--${background}` : "",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+const Section = forwardRef(
+  (
+    { children, className = "", size = "default", background = "default", id },
+    ref
+  ) => {
+    const classes = [
+      "section",
+      size !== "default" ? `section--${size}` : "",
+      background !== "default" ? `section--${background}` : "",
+      className,
+    ]
+      .filter(Boolean)
+      .join(" ");
 
-  return (
-    <section className={classes} id={id}>
-      {children}
-    </section>
-  );
-};
+    return (
+      <section ref={ref} className={classes} id={id}>
+        {children}
+      </section>
+    );
+  }
+);
+
+Section.displayName = "Section";
 
 export default Section;

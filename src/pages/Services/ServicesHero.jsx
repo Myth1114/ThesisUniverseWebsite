@@ -1,7 +1,6 @@
 import Container from "../../components/common/Container/Container";
 import Button from "../../components/common/Button/Button";
 import Section from "../../components/common/Section/Section";
-
 function ServicesHero() {
   return (
     <Section className="services-hero">

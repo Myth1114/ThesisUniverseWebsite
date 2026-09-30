@@ -74,6 +74,16 @@
   color: var(--color-text-muted);
 }
 
+.site-footer__socials {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.site-footer__socials .social-links__item span {
+  font-size: 0.875rem;
+}
 @media (max-width: 900px) {
   .site-footer__top {
     grid-template-columns: 1fr;

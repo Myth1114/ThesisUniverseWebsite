@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FloatingWhatsApp from "./components/common/FloatingWhatsapp/FloatingWhatsapp";
+import ScrollToTop from "./components/common/ScrollToTop/ScrollToTop";
 import SEO from "./components/common/SEO/SEO";
 import Footer from "./components/layout/Footer/Footer";
 
@@ -44,6 +46,7 @@ const PlaceholderPage = ({ title }) => (
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
 
       <Routes>
@@ -57,6 +60,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
+      <FloatingWhatsApp />
     </BrowserRouter>
   );
 }

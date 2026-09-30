@@ -1,9 +1,10 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import Container from "../../components/common/Container/Container";
 import Section from "../../components/common/Section/Section";
 import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
-
+import useScrollReveal from "../../animations/useScrollReveal";
 import "./ResearchLab.css";
 
 const resources = [
@@ -13,7 +14,7 @@ const resources = [
     title: "How to choose a research topic",
     description:
       "Start with a focused direction and turn a broad idea into a researchable academic topic.",
-    path: "/resources/how-to-choose-a-research-topic",
+    path: "/resources/topic-selection",
   },
   {
     number: "02",
@@ -21,7 +22,7 @@ const resources = [
     title: "Understanding research methodology",
     description:
       "Learn how research design, sampling and data collection shape the structure of a study.",
-    path: "/resources/understanding-research-methodology",
+    path: "/resources/methodology",
   },
   {
     number: "03",
@@ -29,7 +30,7 @@ const resources = [
     title: "How to structure a literature review",
     description:
       "Organise existing research into themes, arguments and gaps that support your study.",
-    path: "/resources/how-to-structure-a-literature-review",
+    path: "/resources/literature-review",
   },
   {
     number: "04",
@@ -37,26 +38,32 @@ const resources = [
     title: "From data to research findings",
     description:
       "Understand how collected data becomes meaningful findings connected to research objectives.",
-    path: "/resources/from-data-to-findings",
+    path: "/resources/data-analysis",
   },
 ];
 
 const ResearchLab = () => {
-  return (
-    <Section className="research-lab">
-      <Container wide>
-        <SectionHeader
-          eyebrow="From the Research Lab"
-          title="Ideas and guidance for better academic research."
-          description="Explore practical explanations across the different stages of the research journey."
-        />
+  const sectionRef = useRef(null);
+  useScrollReveal(sectionRef);
 
-        <div className="research-lab__list">
+  return (
+    <Section ref={sectionRef} className="research-lab">
+      <Container wide>
+        <div data-reveal="fadeUp">
+          <SectionHeader
+            eyebrow="From the Research Lab"
+            title="Ideas and guidance for better academic research."
+            description="Explore practical explanations across the different stages of the research journey."
+          />
+        </div>
+
+        <div className="research-lab__list" data-reveal-group>
           {resources.map((resource) => (
             <Link
               key={resource.number}
               to={resource.path}
               className="research-lab__item"
+              data-reveal-item
             >
               <span className="research-lab__number">{resource.number}</span>
 
@@ -82,7 +89,7 @@ const ResearchLab = () => {
           ))}
         </div>
 
-        <div className="research-lab__footer">
+        <div className="research-lab__footer" data-reveal="fadeUp">
           <Link to="/resources" className="research-lab__all-link">
             View all resources
             <span aria-hidden="true">→</span>

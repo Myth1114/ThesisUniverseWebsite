@@ -1,21 +1,25 @@
 .logo {
   display: inline-flex;
   align-items: center;
-
   flex-shrink: 0;
 }
 
 .logo img {
   display: block;
-
   width: auto;
-  height: 52px;
-
+  height: 70px;
   object-fit: contain;
+}
+
+.hero__logo img {
+  height: 120px;
 }
 
 @media (max-width: 768px) {
   .logo img {
-    height: 44px;
+    height: 55px;
+  }
+  .hero__logo img {
+    height: 100px;
   }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Container from "../../components/common/Container/Container";
 import Section from "../../components/common/Section/Section";
 import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
-
+import useScrollReveal from "../../animations/useScrollReveal";
 import "./HowItWorks.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,47 +40,27 @@ const processSteps = [
 
 const HowItWorks = () => {
   const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const context = gsap.context(() => {
-      const elements = gsap.utils.toArray([
-        ".how-it-works .eyebrow",
-        ".how-it-works .section-title",
-        ".how-it-works .section-subtitle",
-        ".how-it-works__step",
-      ]);
-
-      elements.forEach((element) => {
-        gsap.from(element, {
-          y: 24,
-          duration: 0.7,
-          ease: "power3.out",
-          immediateRender: false,
-          scrollTrigger: {
-            trigger: element,
-            start: "top 85%",
-            once: true,
-          },
-        });
-      });
-    }, sectionRef);
-
-    return () => context.revert();
-  }, []);
+  useScrollReveal(sectionRef);
 
   return (
-    <Section className="how-it-works">
+    <Section ref={sectionRef} className="how-it-works">
       <Container wide>
         <div ref={sectionRef}>
-          <SectionHeader
-            eyebrow="How It Works"
-            title="A clear process from your first message onward."
-            description="Research can feel complicated. The process does not have to."
-          />
+          <div data-reveal="fadeUp">
+            <SectionHeader
+              eyebrow="How It Works"
+              title="A clear process from your first message onward."
+              description="Research can feel complicated. The process does not have to."
+            />
+          </div>
 
-          <div className="how-it-works__process">
+          <div className="how-it-works__process" data-reveal-group>
             {processSteps.map((step) => (
-              <article key={step.number} className="how-it-works__step">
+              <article
+                key={step.number}
+                className="how-it-works__step"
+                data-reveal-item
+              >
                 <div className="how-it-works__number">{step.number}</div>
 
                 <div className="how-it-works__content">

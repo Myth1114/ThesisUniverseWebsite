@@ -1,7 +1,8 @@
+import { useRef, React } from "react";
 import Container from "../../components/common/Container/Container";
 import Section from "../../components/common/Section/Section";
 import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
-
+import useScrollReveal from "../../animations/useScrollReveal";
 const academicServices = [
   {
     number: "01",
@@ -51,18 +52,31 @@ const academicServices = [
 ];
 
 function AcademicWork() {
-  return (
-    <Section className="academic-work section-spacing" id="academic-work">
-      <Container>
-        <SectionHeader
-          eyebrow="ACADEMIC WORK"
-          title="Support for the Work You Need to Complete"
-          description="We help you approach academic assignments, dissertations, and thesis projects with clearer structure, practical guidance, and confidence."
-        />
+  const sectionRef = useRef(null);
 
-        <div className="academic-work__list">
+  useScrollReveal(sectionRef);
+  return (
+    <Section
+      ref={sectionRef}
+      className="academic-work section-spacing"
+      id="academic-work"
+    >
+      <Container>
+        <div data-reveal="fadeUp">
+          <SectionHeader
+            eyebrow="ACADEMIC WORK"
+            title="Support for the Work You Need to Complete"
+            description="We help you approach academic assignments, dissertations, and thesis projects with clearer structure, practical guidance, and confidence."
+          />
+        </div>
+
+        <div className="academic-work__list" data-reveal-group>
           {academicServices.map((service) => (
-            <article className="academic-work__item" key={service.number}>
+            <article
+              className="academic-work__item"
+              key={service.number}
+              data-reveal-item
+            >
               <div className="academic-work__top">
                 <span className="academic-work__number">{service.number}</span>
 

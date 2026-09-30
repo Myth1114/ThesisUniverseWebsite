@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import Container from "../../common/Container/Container";
+import SocialLinks from "../../common/SocialLinks/SocialLinks";
 
 import "./Footer.css";
 
@@ -12,16 +13,17 @@ const footerLinks = [
       { label: "How It Works", path: "/how-it-works" },
       { label: "Resources", path: "/resources" },
       { label: "About", path: "/about" },
+      { label: "Contact", path: "/contact" },
     ],
   },
   {
     title: "Research",
     links: [
-      { label: "Topic Selection", path: "/services/topic-selection" },
-      { label: "Proposal", path: "/services/proposal" },
-      { label: "Literature Review", path: "/services/literature-review" },
-      { label: "Methodology", path: "/services/methodology" },
-      { label: "Analysis", path: "/services/analysis" },
+      { label: "Topic Selection", path: "/resources/topic-selection" },
+      { label: "Research Proposal", path: "/resources/research-proposal" },
+      { label: "Literature Review", path: "/resources/literature-review" },
+      { label: "Research Methodology", path: "/resources/methodology" },
+      { label: "Data Analysis", path: "/resources/data-analysis" },
     ],
   },
 ];
@@ -63,27 +65,9 @@ const Footer = () => {
               </div>
             ))}
 
-            <div className="site-footer__group">
+            <div className="site-footer__group site-footer__connect">
               <span className="label">Connect</span>
-
-              <ul className="site-footer__list">
-                <li>
-                  <a
-                    href="https://www.instagram.com/thesisuniversenepal"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="site-footer__link"
-                  >
-                    Instagram
-                  </a>
-                </li>
-
-                <li>
-                  <Link to="/contact" className="site-footer__link">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
+              <SocialLinks className="site-footer__socials" />
             </div>
           </div>
         </div>

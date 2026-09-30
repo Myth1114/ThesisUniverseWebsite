@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import "./UniversePreview.css";
+import Logo from "../../common/Logo/Logo";
 
 const planets = [
   {
@@ -165,13 +166,7 @@ const UniversePreview = () => {
 
       <div className="universe-preview__core">
         <div className="universe-preview__core-inner">
-          <span className="universe-preview__core-mark">TU</span>
-
-          <span className="universe-preview__core-title">Thesis Universe</span>
-
-          <span className="universe-preview__core-text">
-            Research starts here
-          </span>
+          <Logo className="hero__logo" />
         </div>
       </div>
     </div>

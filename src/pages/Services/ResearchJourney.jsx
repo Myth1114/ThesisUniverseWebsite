@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useRef, React, useState } from "react";
 import Container from "../../components/common/Container/Container";
 import Section from "../../components/common/Section/Section";
 import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
-
+import useScrollReveal from "../../animations/useScrollReveal";
 const researchStages = [
   {
     number: "01",
@@ -78,17 +78,26 @@ function ResearchJourney() {
   const toggleStage = (number) => {
     setActiveStage((current) => (current === number ? null : number));
   };
+  const sectionRef = useRef(null);
+
+  useScrollReveal(sectionRef);
 
   return (
-    <Section className="research-journey section-spacing" id="research-journey">
+    <Section
+      ref={sectionRef}
+      className="research-journey section-spacing"
+      id="research-journey"
+    >
       <Container>
-        <SectionHeader
-          eyebrow="RESEARCH JOURNEY"
-          title="Guidance Through Every Stage of Your Research"
-          description="Explore the key stages of academic research and understand how we can support you throughout the process."
-        />
+        <div data-reveal="fadeUp">
+          <SectionHeader
+            eyebrow="RESEARCH JOURNEY"
+            title="Guidance Through Every Stage of Your Research"
+            description="Explore the key stages of academic research and understand how we can support you throughout the process."
+          />
+        </div>
 
-        <div className="research-journey__accordion">
+        <div className="research-journey__accordion" data-reveal-group>
           {researchStages.map((stage) => {
             const isActive = activeStage === stage.number;
 
@@ -98,6 +107,7 @@ function ResearchJourney() {
                   isActive ? "is-active" : ""
                 }`}
                 key={stage.number}
+                data-reveal-item
               >
                 <button
                   type="button"

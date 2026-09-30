@@ -5,7 +5,7 @@ export const academicWork = [
     label: "Assignment",
     description:
       "Structured academic support for coursework, reports and university assignments.",
-    path: "/services/assignment",
+    path: "/services",
   },
   {
     id: "dissertation",
@@ -13,7 +13,7 @@ export const academicWork = [
     label: "Dissertation",
     description:
       "Guidance across the complete dissertation process, from planning to submission.",
-    path: "/services/dissertation",
+    path: "/services",
   },
   {
     id: "thesis",
@@ -21,7 +21,7 @@ export const academicWork = [
     label: "Thesis",
     description:
       "Research-focused support for substantial academic thesis projects.",
-    path: "/services/thesis",
+    path: "/services",
   },
 ];
 
@@ -32,7 +32,7 @@ export const researchJourney = [
     label: "Topic Selection",
     description:
       "Shape a focused, researchable topic with a clear academic direction.",
-    path: "/services/topic-selection",
+    path: "/resources/topic-selection",
   },
   {
     id: "proposal",
@@ -40,7 +40,7 @@ export const researchJourney = [
     label: "Proposal",
     description:
       "Build your research problem, objectives, questions and study plan.",
-    path: "/services/proposal",
+    path: "/resources/research-proposal",
   },
   {
     id: "literature-review",
@@ -48,7 +48,7 @@ export const researchJourney = [
     label: "Literature Review",
     description:
       "Understand existing research, identify themes and uncover research gaps.",
-    path: "/services/literature-review",
+    path: "/resources/literature-review",
   },
   {
     id: "methodology",
@@ -56,7 +56,7 @@ export const researchJourney = [
     label: "Methodology",
     description:
       "Plan your research design, sampling, data collection and analysis approach.",
-    path: "/services/methodology",
+    path: "/resources/methodology",
   },
   {
     id: "analysis",
@@ -64,7 +64,7 @@ export const researchJourney = [
     label: "Analysis",
     description:
       "Interpret your research data and connect findings to your objectives.",
-    path: "/services/analysis",
+    path: "/resources/data-analysis",
   },
   {
     id: "final-submission",
@@ -72,6 +72,6 @@ export const researchJourney = [
     label: "Final Submission",
     description:
       "Prepare your research for review, presentation and final submission.",
-    path: "/services/final-submission",
+    path: "/resources/thesis-dissertation",
   },
 ];

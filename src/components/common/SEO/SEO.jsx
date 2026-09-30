@@ -30,7 +30,6 @@ const SEO = ({ title, description, keywords }) => {
     }
 
     // 4. Reset scroll position on route switch
-    window.scrollTo(0, 0);
   }, [title, description, keywords]);
 
   return null;

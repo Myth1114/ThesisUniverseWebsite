@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import useScrollReveal from "../../animations/useScrollReveal";
 import Container from "../../components/common/Container/Container";
 import Section from "../../components/common/Section/Section";
 
@@ -31,11 +33,14 @@ const reasons = [
 ];
 
 const WhyThesisUniverse = () => {
+  const sectionRef = useRef(null);
+
+  useScrollReveal(sectionRef);
   return (
-    <Section background="soft" className="why-thesis-universe">
+    <Section ref={sectionRef} background="soft" className="why-thesis-universe">
       <Container wide>
         <div className="why-thesis-universe__layout">
-          <div className="why-thesis-universe__intro">
+          <div className="why-thesis-universe__intro" data-reveal="fadeUp">
             <p className="eyebrow">Why Thesis Universe</p>
 
             <h2 className="section-title">
@@ -49,11 +54,12 @@ const WhyThesisUniverse = () => {
             </p>
           </div>
 
-          <div className="why-thesis-universe__reasons">
+          <div className="why-thesis-universe__reasons" data-reveal-group>
             {reasons.map((reason) => (
               <article
                 key={reason.number}
                 className="why-thesis-universe__reason"
+                data-reveal-item
               >
                 <span className="why-thesis-universe__number">
                   {reason.number}
