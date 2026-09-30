@@ -1,5 +1,5 @@
 import { socialLinks } from "../../../data/socialLinks";
-import "./FloatingWhatsApp.css";
+import "./FloatingWhatsapp.css";
 
 const FloatingWhatsApp = () => {
   const whatsapp = socialLinks.find((social) => social.name === "WhatsApp");
